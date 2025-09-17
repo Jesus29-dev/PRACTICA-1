@@ -108,3 +108,10 @@ const styles = StyleSheet.create({
 });
 
 export default FoodListScreen;
+
+
+dependencies {
+    implementation project(':react-native-config')
+    implementation project(':react-native-google-places')
+    implementation project(':react-native-permissions')
+}
