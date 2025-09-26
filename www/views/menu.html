@@ -1,0 +1,107 @@
+<link rel="stylesheet" href="../css/libros.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<div class="row">
+
+    <!-- ############################# -->
+    <!-- Los breakpoints de Bootstrap se pueden añadir a cols en seguida del tamaño dispositivo (sm, md, lg, xl, si no se especifica lo toma como default) y la cantidad de columnas que tendrá (del 1 al 12). -->
+    <!-- ############################# -->
+
+    <!-- <div class="col mb-2">
+        <button type="button" class="btn btn-primary">Agregar nuevo libro</button>
+    </div> -->
+
+    <!-- ############################# -->
+    <!-- Los breakpoints de Bootstrap se pueden añadir a cols en seguida del tamaño dispositivo (sm, md, lg, xl, si no se especifica lo toma como default) y la cantidad de columnas que tendrá (del 1 al 12). -->
+    <!-- ############################# -->
+
+
+</div>
+<div class="table-responsive">
+    <table class="table">
+        <!-- <thead class="table-active">
+            <tr>
+                <th>id</th>
+                <th>titulo</th>
+                <th>autor</th>
+                <th>fecha de publicacion</th>
+                <th>portada</th>
+                <th>resena</th>
+            </tr>
+        </thead> -->
+        <tbody>
+            <!-- ############################# -->
+            <!-- En AngularJS el atributo directiva ng-if añade o elimina un elemento según un booleano dado por las variables de JavaScript (app.js que corresponda). -->
+            <!-- ############################# -->
+            <!-- <tr ng-if="spinnerTbody">
+                <th colspan="4">
+                    <div class="text-center p-3">
+                        <div class="spinner-border" role="status" style="width: 3rem; height: 3rem;">
+                            <span class="visually-hidden">Cargando...</span>
+                        </div>
+                    </div>
+                </th>
+            </tr>
+             -->
+
+        </tbody>
+    </table>
+
+    <div class="container">
+        <div class="container-fluid p-0" style="background: #fff;">
+            <div class="row">
+
+                <div class="bg-danger text-white px-3 py-2 d-flex align-items-center">
+                    <i class="bi bi-arrow-left me-2"></i>
+                    <div>
+                        <h6 class="mb-0 fw-bold">Pizzería Roma</h6>
+                        <small><i class="bi bi-star-fill text-warning"></i> 4.5 • 25-30 min • $</small>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="d-flex justify-content-around mt-3 px-2">
+                <button class="btn btn-sm btn-primary rounded-pill px-3">
+                <i class="bi bi-pizza"></i> Pizzas
+                </button>
+                <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">
+                <i class="bi bi-cup-straw"></i> Bebidas
+                </button>
+                <button class="btn btn-sm btn-outline-secondary rounded-pill px-3">
+                <i class="bi bi-cup-hot"></i> Postres
+                </button>
+            </div>
+
+            <div class="px-3 mt-3">
+                <div class="card mb-3 shadow-sm border-0">
+                    <div class="card-body d-flex align-items-center">
+                        <img src="" alt="Pizza" class="rounded" style="width:50px; height:50px; object-fit:cover;">
+                        <div class="ms-3 flex-grow-1">
+                        <h6 class="mb-1 fw-bold">Pizza Margherita</h6>
+                        <small class="text-muted">Tomate, mozzarella, albahaca</small>
+                        <div class="text-success fw-bold mt-1">$180</div>
+                    </div>
+                    <button class="btn btn-success rounded-circle ms-2">
+                        <i class="bi bi-plus-lg"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="card mb-3 shadow-sm border-0">
+                <div class="card-body d-flex align-items-center">
+                    <img src="" alt="Pizza" class="rounded" style="width:50px; height:50px; object-fit:cover;">
+                    <div class="ms-3 flex-grow-1">
+                        <h6 class="mb-1 fw-bold">Pizza Pepperoni</h6>
+                        <small class="text-muted">Pepperoni, mozzarella, orégano</small>
+                        <div class="text-success fw-bold mt-1">$220</div>
+                    </div>
+                    <button class="btn btn-success rounded-circle ms-2">
+                        <i class="bi bi-plus-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  
+</div>
