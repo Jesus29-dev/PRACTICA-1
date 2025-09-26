@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+
+<!-- ############################# -->
+<!-- En AngularJS el atributo directiva ng-app define el espacio de la aplicación, este puede ser en la etiqueta html o body (Para crear una sola app) o en contenedores etiquetas dentro de la etiqueta body (Para crear mini aplicaciones o bien separar mejor la lógica). -->
+<!-- ############################# -->
+<html lang="es" ng-app="angularjsApp">
+<head>
+    <meta charset="utf-8">
+    <!--
+    Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
+        https://cordova.apache.org/docs/en/latest/
+    Some notes:
+        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+        * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+            * Enable inline JS: add 'unsafe-inline' to default-src
+    -->
+
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"> -->
+    
+    <!-- ############################# -->
+    <!-- Coloca el dominio de los endpoints: ip intranet del localhost o dominio, especificando si es http o https. -->
+    <!-- ############################# -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; connect-src 'self' https://coupons-games-getting-rendering.trycloudflare.com; style-src 'self' 'unsafe-inline'; media-src *;">
+
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="css/libros.css">
+    <title>APP</title>
+
+    <link href="assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/bootstrap/icons/font/bootstrap-icons.min.css">
+
+    <script src="assets/js/jquery.min.js"></script>
+
+    <script src="assets/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+
+    <!-- JQuery UI -->
+    <link rel="stylesheet" href="assets/jquery-ui/jquery-ui.css">
+    <script src="assets/jquery-ui/jquery-ui.min.js" defer></script>
+
+    <!-- JQuery Validate -->
+    <script src="assets/js/jquery.validate.min.js"></script>
+    <script src="assets/js/additional-methods.min.js"></script>
+
+    <!-- AngularJS -->
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/angular-route.min.js"></script>
+
+    <script src="assets/js/luxon.min.js"></script>
+
+    <link rel="stylesheet" href="assets/flatpickr/css/dark.min.css">
+    <script src="assets/flatpickr/js/flatpickr.min.js"></script>
+    <script src="assets/flatpickr/js/flatpickr-locale-es.min.js"></script>
+
+    <script src="assets/js/plotly.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/scripts.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body>
+    <div class="app d-none">
+        <h1>Apache Cordova</h1>
+        <div id="deviceready" class="blink">
+            <p class="event listening">Connecting to Device</p>
+            <p class="event received">Device is Ready</p>
+        </div>
+    </div>
+    <div class="mt-1 pe-2 ng-hide d-flex justify-content-between align-items-center" 
+        ng-show="login && !spinnerGrow" 
+        style="font-size: 1.25rem;">
+
+    
+        <h2 class="mb-0" style="color: #ab3a3a; margin-left: 10px; font-weight: bold;">DeliveryApp</h2>
+
+        <div class="text-end">
+            <button class="btn bg-body text-body btn-lg btn-cerrar-sesion ng-hide" ng-show="login">
+            <i class="bi bi-box-arrow-left"></i>
+            </button>
+            <button class="btn bg-body text-body btn-lg btn-carrito ng-hide" ng-show="login">
+            <i class="bi bi-cart"></i>
+            </button>
+        </div>
+
+    </div>
+
+    <footer class="app-footer bg-body border-top ng-hide" ng-show="login && !spinnerGrow" style="position: fixed; bottom: 0; width: 100%; z-index: 1000;">
+        <ul class="app-menu nav nav-underline justify-content-center nav-fill ms-3 me-3">
+
+            <li class="nav-item ng-hide" ng-show="!login && !spinnerGrow">
+                <a class="nav-link" href="#/" style="display: none;">
+                    <i class="bi bi-box-arrow-right" style="font-size: 1.25em;"></i>
+                    <span class="d-none d-lg-block d-xl-block">Iniciar Sesion</span>
+                </a>
+            </li>
+
+            <li class="nav-item ng-hide" ng-show="login && !spinnerGrow">
+                <a class="nav-link" href="#/inicio">
+                    <i class="bi bi-house" style="font-size: 1.25em;"></i>
+                    <span class="d-none d-lg-block d-xl-block">Inicio</span>
+                </a>
+            </li>
+
+            <li class="nav-item ng-hide" ng-show="login && !spinnerGrow">
+                <a class="nav-link" href="#/menu">
+                    <i class="bi bi-postcard" style="font-size: 1.25em;"></i>
+                    <span class="d-none d-lg-block d-xl-block">Menu</span>
+                </a>
+            </li>
+
+            <li class="nav-item ng-hide" ng-show="login && !spinnerGrow">
+                <a class="nav-link" href="#/seguimiento">
+                    <i class="bi bi-list-check" style="font-size: 1.25em;"></i>
+                    <span class="d-none d-lg-block d-xl-block">Seguimiento</span>
+                </a>
+            </li>
+            
+        </ul>
+    </footer>
+
+    <!-- <div id="appSpinnerGrow" ng-if="spinnerGrow">
+        <div class="text-center p-5 m-5">
+            <div class="spinner-grow p-5 m-5" style="width: 80px; height: 80px;" role="status">
+                <span class="visually-hidden">Cargando...</span>
+            </div>
+        </div>
+    </div> -->
+
+    <div id="appContent" class="app-content container-fluid p-0 {{ slide }} ng-hide" ng-show="!spinnerGrow" ng-view></div>
+
+    <div style="height: 3rem;"></div>
+    <div class="app-float-button bg-body" style="z-index: 2; position: fixed; bottom: 5px; left: 5px; cursor: pointer; font-size: 1.25rem;">
+        <!-- <ul class="list-group list-group-horizontal">
+            <li class="list-group-item" data-bs-theme-value="light">
+                <i class="bi bi-sun-fill"></i>
+            </li>
+            <li class="list-group-item" data-bs-theme-value="dark">
+                <i class="bi bi-moon-stars-fill"></i>
+            </li>
+        </ul> -->
+    </div>
+
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
